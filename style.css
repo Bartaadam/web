@@ -1,38 +1,36 @@
 body {
     background-color: rgb(0, 255, 255);
 }
-body {
-    background-color: cyan;
-}
 
-ul {
+ul.a {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(113, 18, 18);
   }
   
-li {
+li.a {
     float: left;
   }
   
-li a {
+li.a a {
     display: block;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
   
-li a:hover:not(.active) {
-    background-color: #111;
+li.a a:hover:not(.active) {
+    background-color: rgb(103, 198, 113);
   }
   
 .active {
     background-color: #04AA6D;
   }
-h1 {
+
+  h1 {
     color: red
 }
 h2 {
