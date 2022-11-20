@@ -49,7 +49,7 @@ h6 {
     color: orange
 }
 p {
-    color: greenyellow
+    color: rgb(0, 0, 0)
 }
 i {
     color: brown
@@ -57,3 +57,44 @@ i {
 b {
     color: red
 }
+  
+div.box1{
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    transition: .5s;
+    float: left;
+  }
+div.box2{
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    transition: .5s;
+    float: left;
+  
+}
+.box3 {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    transition: .5s;
+    float: left;
+  
+}
+
+div.box4{
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    transition: .5s;
+    float: left;
+}
+
+.box1:hover{
+    transform: scale(1.1);}
+.box2:hover{
+    transform: scale(1.1);}
+.box3:hover{
+    transform: scale(1.1);}
+.box4:hover{
+    transform: scale(1.1);}
