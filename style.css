@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(217, 255, 80);
+    background-color: rgba(0, 0, 0, 0.751);
 }
 
 ul.a {
@@ -31,10 +31,10 @@ li.a a:hover:not(.active) {
   }
 
   h1 {
-    color: red
+    color: rgba(87, 196, 218, 0.751)
 }
 h2 {
-    color: green
+    color: rgba(87, 196, 218, 0.751)
 }
 h3 {
     color: pink
@@ -49,7 +49,7 @@ h6 {
     color: orange
 }
 p {
-    color: rgb(0, 0, 0)
+    color: rgba(87, 218, 150, 0.751)
 }
 i {
     color: brown
@@ -64,6 +64,7 @@ div.box1{
     height: 200px;
     transition: .5s;
     float: left;
+    color: rgba(0, 255, 247, 0.942)
   }
 div.box2{
     margin: 10px;
@@ -71,6 +72,7 @@ div.box2{
     height: 200px;
     transition: .5s;
     float: left;
+    color: rgba(0, 255, 64, 0.942);
   
 }
 .box3 {
@@ -79,6 +81,7 @@ div.box2{
     height: 200px;
     transition: .5s;
     float: left;
+    color: rgba(255, 247, 0, 0.942);
   
 }
 
@@ -88,6 +91,7 @@ div.box4{
     height: 200px;
     transition: .5s;
     float: left;
+    color: rgba(255, 157, 0, 0.942);
 }
 
 .box1:hover{
@@ -113,3 +117,13 @@ div.box4{
     footer{
         margin-top: auto;
     }
+
+li {
+    color: rgba(80, 223, 116, 0.942);
+}
+.cigany {
+    color: rgba(80, 223, 116, 0.942);
+}
+table {
+    color: rgb(203, 124, 255);
+}
