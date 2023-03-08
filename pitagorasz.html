@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Pitagorasz</title>
+</head>
+<body>
+    <h1>Pitagorasz számoló</h1>
+    <img src="img/Pitagorasz tétel_sm.webp" alt="">
+    <form action="javascript:void(0)">
+        <fieldset>
+            <br>
+            <label for="a">a </label>
+            <input class="font1" type="text" name="pit" id="a" oninput="szamol()"><br><br>
+            <label for="b">b</label>
+            <input class="font1" type="text" name="pit" id="b" oninput="szamol()"><br><br>
+            <label for="c">c </label>
+            <input class="font1" type="text" name="pit" id="c" oninput="szamol()"><br><br><br>
+            <input type="button" name="pit" value="TÖRLÉS" onclick="torles()">
+        </fieldset>
+    </form>
+    <script>
+        const a = document.getElementById("a");
+        const b = document.getElementById("b");
+        const c = document.getElementById("c");
+        function szamol() {
+            if (a.value !== "" && b.value !== "") {
+                const aSquared = Math.pow(parseFloat(a.value), 2);
+                const bSquared = Math.pow(parseFloat(b.value), 2);
+                const cValue = Math.sqrt(aSquared + bSquared);
+                c.value = cValue;
+            } else if (a.value !== "" && c.value !== "") {
+                const aSquared = Math.pow(parseFloat(a.value), 2);
+                const cSquared = Math.pow(parseFloat(c.value), 2);
+                const bValue = Math.sqrt(cSquared - aSquared);
+                b.value = bValue;
+            } else if (b.value !== "" && c.value !== "") {
+                const bSquared = Math.pow(parseFloat(b.value), 2);
+                const cSquared = Math.pow(parseFloat(c.value), 2);
+                const aValue = Math.sqrt(cSquared - bSquared);
+                a.value = aValue;
+            }
+        }
+        function torles() {
+            a.value = "";
+            b.value = "";
+            c.value = "";
+            location.reload();
+        }
+    </script>
+</body>
+</html>
