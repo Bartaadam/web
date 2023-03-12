@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <meta charset="UTF-8">
     <title>Pitagorasz</title>
+<style>
+    body{  font-family: "Sofia", sans-serif;}
+</style>
 </head>
 <body>
     <h1>Pitagorasz számoló</h1>
@@ -10,11 +14,11 @@
     <form action="javascript:void(0)">
         <fieldset>
             <br>
-            <label for="a">a </label>
+            <label for="a">a oldal: </label>
             <input type="text" name="x" id="a" oninput="szamol()"><br><br>
-            <label for="b">b</label>
+            <label for="b">b oldal:</label>
             <input type="text" name="x" id="b" oninput="szamol()"><br><br>
-            <label for="c">c </label>
+            <label for="c">c oldal:</label>
             <input type="text" name="x" id="c" oninput="szamol()"><br><br><br>
             <input type="button" name="x" value="TÖRLÉS" onclick="torles()">
         </fieldset>
