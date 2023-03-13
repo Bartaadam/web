@@ -1,56 +1,181 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="HU">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+      body{  font-family: "Sofia", sans-serif;}
+        .font1 {
+            font-family: 'Nosifer', cursive;
+            text-align: center;
+        }
+        
+        #triangle {
+            width: 0;
+            height: 0;
+            border-left: 0px solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 100px solid #555;
+        }
+        * {
+          box-sizing: border-box;
+        }
+        
+        .menu {
+          float: left;
+          width: 20%;
+          text-align: center;
+          background-color:rgb(88, 88, 88);
+        }
+        
+        .menu a {
+          background-color: rgba(87, 196, 218, 0.751);
+          padding: 8px;
+          margin-top: 7px;
+          display: block;
+          width: 100%;
+          color:rgb(58, 58, 58);
+        }
+        
+        .main {
+          float: left;
+          width: 60%;
+          padding: 0 20px;
+          text-align: center;
+          background-color: ;
+        }
+        
+        .right {
+          float: left;
+          width: 20%;
+          padding: 15px;
+          margin-top: 7px;
+          text-align: center;
+          background-color: rgb(88, 88, 88);
+          font-style: italic;
+          color: blue;
+        }
+        
+        @media only screen and (max-width: 620px) {
+          /* For mobile phones: */
+          .menu, .main, .right {
+            width: 100%;
+          }
+        }
+        </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
     <meta charset="UTF-8">
-    <title>Pitagorasz</title>
-<style>
-    body{  font-family: "Sofia", sans-serif;}
-</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KÉP LINKES FELADAT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        footer {
+          text-align: center;
+          padding: 3px;
+          background-color: rgb(113, 18, 18);
+          color: white;
+        }
+        </style>
+    <style>
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: 333;
+        }
+        li {
+            float : left;
+        }
+        
+        </style>
 </head>
 <body>
-    <h1>Pitagorasz számoló</h1>
-    <img src="img/Pitagorasz tétel_sm.webp" alt="">
-    <form action="javascript:void(0)">
-        <fieldset>
+    <div style="background-color:rgb(68, 68, 68);padding:15px;text-align:center;">
+        <h1>Barta Ádám Adrián</h1>
+      </div>
+      
+      <div style="overflow:auto">
+        <div class="menu">
+          <a href="index.html">Főoldal</a>
+          <a href="keplink.html">Képlink</a>
+          <a href="lista.html">Listák</a>
+          <a href="tablazat.html">Órarend</a>
+          <a href="urlap.html">Ürlap</a>
+          <a href="div.html">Div</a>
+          <a href="homoktovis.html">Homoktövis</a>
+          <a href="szamolo.html">Számológép</a>
+          <a href="pitagorasz.html">pitagorasz</a>
+        </div>
+      
+        <div class="main"><center>
+          <h1 class="font1">Pitagorasz tétel számoló</h1>
+
+          <img src="img/Pitagorasz tétel_sm.webp" alt="pitagorasz" height="125" width="225">
+      
+          <form action="javascript:void(0)">
+              <fieldset style="width: 50%;">
+                  <br>
+                  <legend>Adj meg legalább két oldalt!</legend>
+                  <label for="a">a oldal:</label>
+                  <input class="font1" type="text" name="pit" id="a" oninput="szamol()"><br>
+                  <label for="b">b oldal:</label>
+                  <input class="font1" type="text" name="pit" id="b" oninput="szamol()"><br>
+                  <label for="c">c oldal:</label>
+                  <input class="font1" type="text" name="pit" id="c" oninput="szamol()"><br>
+                  <input type="button" name="pit" value="TÖRLÉS" onclick="torles()">
+              </fieldset>
+          </form>
+        
+          <br>
+          <h3>A megadott paraméterek alapján rajzolt háromszög:</h3>
+          <div id="triangle" style="border-left: 0px solid transparent; border-right: 40px solid transparent; border-bottom: 30px solid cyan;"></div>
+        </center>
+          <script>
+              function szamol() {
+                  if (a.value != 0 && b.value != 0) {
+                      c.value = Math.sqrt((a.value * a.value) + (b.value * b.value));
+                      document.getElementById("c");
+      
+                  } else if (a.value != 0 && c.value != 0) {
+                      b.value = Math.sqrt((c.value * c.value) - (a.value * a.value));
+                      document.getElementById("b");
+                  } else if (b.value != 0 && c.value != 0) {
+                      a.value = Math.sqrt((c.value * c.value) - (b.value * b.value));
+                      document.getElementById("a");
+                  }
+      
+                  const haromszog = document.getElementById("triangle");
+                  haromszog.style = "border-left:" + 0 + "px solid transparent;" +
+                      "border-right:" + b.value * 10 + "px solid transparent;" +
+                      "border-bottom:" + a.value * 10 + "px solid cyan;";
+      
+      
+              }
+      
+              function torles() {
+                  a.value = "";
+                  b.value = "";
+                  c.value = "";
+                  document.location.reload();
+              }
+          </script>
+        </div>
+      
+        <div class="right">
+            <p>Az alábbi képen a kollázsképem látható</p>
+            <p>Név: Barta Ádám Adrián</p>
+            <p>Kor: 15 éves</p>
+            <p>A Miskolci SZC Kandó Kálmán Informatikai Technikum tanulója vagyok.</p>
+            <p>A kedvenc tantárgyam nem az IKT projektmunka.</p>
+            <img src="img/kollazs1.jpg" alt="A képen az én kollázs képem látható" title="kollazs" width="300">
             <br>
-            <label for="a">a oldal: </label>
-            <input type="text" name="x" id="a" oninput="szamol()"><br><br>
-            <label for="b">b oldal:</label>
-            <input type="text" name="x" id="b" oninput="szamol()"><br><br>
-            <label for="c">c oldal:</label>
-            <input type="text" name="x" id="c" oninput="szamol()"><br><br><br>
-            <input type="button" name="x" value="TÖRLÉS" onclick="torles()">
-        </fieldset>
-    </form>
-    <script>
-        const a = document.getElementById("a");
-        const b = document.getElementById("b");
-        const c = document.getElementById("c");
-        function szamol() {
-            if (a.value !== "" && b.value !== "") {
-                const aSquared = Math.pow(parseFloat(a.value), 2);
-                const bSquared = Math.pow(parseFloat(b.value), 2);
-                const cValue = Math.sqrt(aSquared + bSquared);
-                c.value = cValue;
-            } else if (a.value !== "" && c.value !== "") {
-                const aSquared = Math.pow(parseFloat(a.value), 2);
-                const cSquared = Math.pow(parseFloat(c.value), 2);
-                const bValue = Math.sqrt(cSquared - aSquared);
-                b.value = bValue;
-            } else if (b.value !== "" && c.value !== "") {
-                const bSquared = Math.pow(parseFloat(b.value), 2);
-                const cSquared = Math.pow(parseFloat(c.value), 2);
-                const aValue = Math.sqrt(cSquared - bSquared);
-                a.value = aValue;
-            }
-        }
-        function torles() {
-            a.value = "";
-            b.value = "";
-            c.value = "";
-            location.reload();
-        }
-    </script>
+        </div>
+      </div>
+      
+      <div style="background-color:rgba(87, 196, 218, 0.751);text-align:center;padding:10px;margin-top:7px; color: rgb(68, 68, 68);">© kopirájt BÁ</div>
+    
 </body>
 </html>

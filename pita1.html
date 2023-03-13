@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<meta charset="UTF-8">
+    <title>Pitagorasz számoló feladat</title>
+    <style>
+    body{  font-family: "Sofia", sans-serif;}
+        .font1 {
+            font-family: 'Nosifer', cursive;
+        }
+        
+        #triangle {
+            width: 0;
+            height: 0;
+            border-left: 0px solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 100px solid #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="font1">Pitagorasz tétel számoló</h1>
+
+    <img src="img/Pitagorasz tétel_sm.webp" alt="">
+
+    <form action="javascript:void(0)">
+        <fieldset style="width: 50%;">
+            <br>
+            <legend>Adj meg legalább két oldalt!</legend>
+            <label for="a">a oldal:</label>
+            <input class="font1" type="text" name="pit" id="a" oninput="szamol()"><br>
+            <label for="b">b oldal:</label>
+            <input class="font1" type="text" name="pit" id="b" oninput="szamol()"><br>
+            <label for="c">c oldal:</label>
+            <input class="font1" type="text" name="pit" id="c" oninput="szamol()"><br>
+            <input type="button" name="pit" value="TÖRLÉS" onclick="torles()">
+        </fieldset>
+    </form>
+
+    <br>
+    <h3>A megadott paraméterek alapján rajzolt háromszög:</h3>
+    <div id="triangle" style="border-left: 0px solid transparent; border-right: 40px solid transparent; border-bottom: 30px solid cyan;"></div>
+
+    <script>
+        function szamol() {
+            if (a.value != 0 && b.value != 0) {
+                c.value = Math.sqrt((a.value * a.value) + (b.value * b.value));
+                document.getElementById("c");
+
+            } else if (a.value != 0 && c.value != 0) {
+                b.value = Math.sqrt((c.value * c.value) - (a.value * a.value));
+                document.getElementById("b");
+            } else if (b.value != 0 && c.value != 0) {
+                a.value = Math.sqrt((c.value * c.value) - (b.value * b.value));
+                document.getElementById("a");
+            }
+
+            const haromszog = document.getElementById("triangle");
+            haromszog.style = "border-left:" + 0 + "px solid transparent;" +
+                "border-right:" + b.value * 10 + "px solid transparent;" +
+                "border-bottom:" + a.value * 10 + "px solid cyan;";
+
+
+        }
+
+        function torles() {
+            a.value = "";
+            b.value = "";
+            c.value = "";
+            document.location.reload();
+        }
+    </script>
+
+
+
+</body>
+</html>
