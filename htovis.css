@@ -1,3 +1,33 @@
+mark {
+  color:mediumblue;
+}       
+nav a {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: grey;
+}
+
+nav a{
+  float: left;
+}
+
+nav a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+nav a a:hover:not(.active) {
+  background-color: grey;
+}
+
+.active {
+  background-color: green;
+}
 body{
   background-image: url('hatter.png');
   padding: 15px;
