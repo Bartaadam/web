@@ -1,5 +1,6 @@
 body {
     background-color: rgba(0, 0, 0, 0.751);
+    font-family: "Times New Roman", Times, serif;
 }
 
 ul.a {
@@ -59,38 +60,41 @@ b {
 }
   
 div.box1{
+    text-align: center;
     margin: 10px;
-    width: 200px;
-    height: 200px;
+    width: 100;
+    height: 100;
     transition: .5s;
-    float: left;
+    float: ;
     color: rgba(0, 255, 247, 0.942)
   }
 div.box2{
+    text-align: center;
     margin: 10px;
-    width: 200px;
-    height: 200px;
+    width: 100;
+    height: 100;
     transition: .5s;
     float: left;
     color: rgba(0, 255, 64, 0.942);
   
 }
-.box3 {
+div.box3 {
+    text-align: center;
     margin: 10px;
-    width: 200px;
-    height: 200px;
+    width: 100;
+    height: 100;
     transition: .5s;
-    float: left;
+    float:right ;
     color: rgba(255, 247, 0, 0.942);
   
 }
 
 div.box4{
     margin: 10px;
-    width: 200px;
-    height: 200px;
+    width: 100;
+    height: 100;
     transition: .5s;
-    float: left;
+    float: none;
     color: rgba(255, 157, 0, 0.942);
 }
 
